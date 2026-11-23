@@ -5,60 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard Shell</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="dashboard">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="brand">App Shell</div>
       <nav aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#analytics">Analytics</a></li>
-          <li><a href="#settings">Settings</a></li>
+          <li><a href="#" class="nav-link active">Dashboard</a></li>
+          <li><a href="#" class="nav-link">Reports</a></li>
+          <li><a href="#" class="nav-link">Settings</a></li>
         </ul>
       </nav>
     </aside>
 
     <header class="topbar">
-      <h1>Dashboard</h1>
+      <div class="topbar-left">
+        <button id="menu-toggle" aria-label="Open menu">&#9776;</button>
+        <h1>Dashboard</h1>
+      </div>
+      <button id="btn-theme" type="button">Toggle Theme</button>
     </header>
 
     <main class="content">
       <section class="stat-cards" aria-label="Key metrics">
         <div class="stat-card">
           <p class="stat-label">Total Users:</p>
-          <p class="stat-value" id="stat-users">—</p>
+          <p class="stat-value" id="stat-users">&mdash;</p>
         </div>
         <div class="stat-card">
           <p class="stat-label">Total Transactions:</p>
-          <p class="stat-value" id="stat-transactions">—</p>
+          <p class="stat-value" id="stat-transactions">&mdash;</p>
         </div>
         <div class="stat-card">
           <p class="stat-label">Average:</p>
-          <p class="stat-value" id="stat-average">—</p>
+          <p class="stat-value" id="stat-average">&mdash;</p>
         </div>
+        <button id="btn-refresh" type="button">Refresh Data</button>
       </section>
 
       <section class="chart-placeholder" aria-label="Chart area">
         Chart will be displayed here (Session 11)
       </section>
+
+      <section class="greeting-demo" aria-label="Visitor greeting demo">
+        <h2>Visitor Greeting (Demo)</h2>
+        <div class="demo-row">
+          <input type="text" id="visitor-name" placeholder="Type your name..." />
+          <button id="btn-greet-unsafe" type="button">Show (Unsafe)</button>
+          <button id="btn-greet-safe" type="button">Show (Safe)</button>
+        </div>
+        <div id="greeting-output" class="demo-output"></div>
+      </section>
+
+      <section class="comment-demo" aria-label="Comment box (demo)">
+        <h2>Visitor Comments (Demo)</h2>
+        <div class="demo-row">
+          <input type="text" id="comment-input" placeholder="Write a comment..." />
+          <button id="btn-comment" type="button">Post Comment</button>
+        </div>
+        <div id="comment-box" class="demo-output"></div>
+      </section>
     </main>
 
     <footer class="footer">
-      <small>Dashboard Shell — Session 2 Practicum</small>
+      <small>Dashboard Shell &mdash; Session 3 Practicum</small>
     </footer>
   </div>
-
-  <script>
-    const statsData = {
-      users: "128",
-      transactions: "45",
-      average: "Rp4.210.000"
-    };
-
-    document.getElementById("stat-users").textContent = statsData.users;
-    document.getElementById("stat-transactions").textContent = statsData.transactions;
-    document.getElementById("stat-average").textContent = statsData.average;
-  </script>
 </body>
 </html>
