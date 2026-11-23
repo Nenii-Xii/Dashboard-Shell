@@ -137,9 +137,16 @@ body {
     display: block;
   }
 
-  .stat-card {
-    flex: 1 1 200px;
-  }
+  .stat-label {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
 
   .footer {
     text-align: left;
